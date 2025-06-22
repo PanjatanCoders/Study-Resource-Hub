@@ -17,6 +17,10 @@ Important_Study_Materials/
 
 ## Categories
 
+### GitHub Repositories
+- [Mastering GitHub Copilot](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming) - learn how to collaborate with AI using natural-language prompts that initiate multi-step solutions—from initial planning and architecture suggestions to code generation, testing, and iteration.
+- [Computer Science courses with video lectures](https://github.com/Developer-Y/cs-video-courses) - An awesome place to get all video tutorials under one page. Specially for Computer Science Subjects 
+
 ### Python
 Python programming language resources, including frameworks, libraries, and best practices.
 

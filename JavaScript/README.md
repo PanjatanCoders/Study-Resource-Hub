@@ -29,6 +29,8 @@
 - [HEAD](https://github.com/joshbuchea/HEAD) - A comprehensive guide to everything that goes in the `<head>` of your HTML document. Essential resource for web developers.
 - [Front-end Interview Handbook](https://github.com/yangshun/front-end-interview-handbook) - Detailed answers to front-end interview questions, focusing on JavaScript concepts and web development fundamentals.
 - [Back-End-Developer-Interview-Questions](https://github.com/arialdomartini/Back-End-Developer-Interview-Questions?tab=readme-ov-file#constructors-and-interfaces) - This repository compiles various back-end interview questions to help evaluate candidates, but it's not intended for all questions to be used in a single interview. Select the sections and questions most relevant to your needs to guide meaningful conversations.
+- [Front-End-Checklist](https://github.com/thedaviddias/Front-End-Checklist) - The Front-End Checklist is an exhaustive list of all elements you need to have / to test before launching your website / HTML page to production.
+- [30-Days-Of-JavaScript](https://github.com/Asabeneh/30-Days-Of-JavaScript) - A 30-days challange to start JavaScript journey from Scratch to advanced level. Hands-on project work with nice explanation as educational content
 ## Books
 
 ## Best Practices
