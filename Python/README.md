@@ -32,6 +32,8 @@
 - [Amazing-Python-Scripts](https://github.com/avinashkranjan/Amazing-Python-Scripts) - A Python script repository is a handy resource full of task automation, web scraping, and project-ready examples—perfect for students exploring coding on their own or scaling up to bigger builds.
 - [The Algorithms - Python](https://github.com/TheAlgorithms/Python) - TheAlgorithms/Python is a great open-source resource packed with Python implementations of algorithms and data structures—perfect for grasping the foundations of computer science and sharpening competitive programming skills. Just keep in mind that the code is educational, not optimized for production use.
 
+## Python Projects
+- [70+ Python Projects for Beginners](https://pythongeeks.org/python-projects/) - Python projects to get you started, here are the 70+ best python projects out there![Source Code Included]
 
 ## Books
 
