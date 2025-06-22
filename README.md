@@ -54,10 +54,15 @@ Each directory contains its own README.md file with:
 
 ## Contributing
 
-Feel free to suggest new resources by:
+**Feel free to suggest new resources by:**
 1. Creating a new branch
 2. Adding your resources to the appropriate directory
 3. Creating a pull request with a description of the added resources
+
+**❌ Not accepted:**
+- Advertising content
+- Promotional materials
+- Commercial listings
 
 ## License
 
