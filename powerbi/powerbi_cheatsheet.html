@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerBI DAX Cheat Sheet - Gen-Z Edition</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: rotate(0deg) translateX(10px); }
+            100% { transform: rotate(360deg) translateX(10px); }
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            font-weight: 800;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 10px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .emoji {
+            font-size: 1.5em;
+            margin: 0 5px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid;
+        }
+        
+        .section:nth-child(odd) { border-left-color: #ff6b6b; }
+        .section:nth-child(even) { border-left-color: #4ecdc4; }
+        
+        .section h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section h3 {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin: 25px 0 15px 0;
+            color: #34495e;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 5px;
+        }
+        
+        .dax-function {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .dax-function:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .function-name {
+            font-weight: 700;
+            color: #e74c3c;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+        
+        .function-syntax {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        
+        .function-desc {
+            color: #7f8c8d;
+            line-height: 1.5;
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #e17055;
+        }
+        
+        .tip-box::before {
+            content: "💡 Pro Tip: ";
+            font-weight: 700;
+            color: #2d3436;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #fab1a0, #e17055);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .warning-box::before {
+            content: "⚠️ Watch Out: ";
+            font-weight: 700;
+        }
+        
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .quick-ref {
+            background: #74b9ff;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .category-badge {
+            display: inline-block;
+            background: #00b894;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #6c5ce7;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .print-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.4);
+        }
+        
+        @media print {
+            body { 
+                background: white; 
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .print-button { display: none; }
+        }
+        
+        .flex-row {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .flex-item {
+            flex: 1;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #74b9ff;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">🖨️ Print PDF</button>
+    
+    <div class="container">
+        <div class="header">
+            <h1>PowerBI DAX Cheat Sheet <span class="emoji">📊</span></h1>
+            <div class="subtitle">Your ultimate no-cap guide to slaying those reports <span class="emoji">🔥</span></div>
+        </div>
+        
+        <div class="content">
+            <!-- Essential DAX Functions -->
+            <div class="section">
+                <h2><span class="emoji">⚡</span> Essential DAX Functions (The Holy Grail)</h2>
+                
+                <h3>Text Functions</h3>
+                <div class="formula-grid">
+                    <div class="dax-function">
+                        <div class="category-badge">TEXT</div>
+                        <div class="function-name">CONCATENATE()</div>
+                        <div class="function-syntax">CONCATENATE(text1, text2)</div>
+                        <div class="function-desc">Joins two text strings into one. Period.</div>
+                    </div>
+                    
+                    <div class="dax-function">
+                        <div class="category-badge">TEXT</div>
+                        <div class="function-name">LEFT() / RIGHT() / MID()</div>
+                        <div class="function-syntax">LEFT(text, num_chars)<br>RIGHT(text, num_chars)<br>MID(text, start, num_chars)</div>
+                        <div class="function-desc">Extract parts of text strings like a boss.</div>
+                    </div>
+                    
+                    <div class="dax-function">
+                        <div class="category-badge">TEXT</div>
+                        <div class="function-name">SUBSTITUTE()</div>
+                        <div class="function-syntax">SUBSTITUTE(text, old_text, new_text)</div>
+                        <div class="function-desc">Replace text within a string - find and replace on steroids.</div>
+                    </div>
+                </div>
+                
+                <h3>Date & Time Functions</h3>
+                <div class="formula-grid">
+                    <div class="dax-function">
+                        <div class="category-badge">DATE</div>
+                        <div class="function-name">TODAY() / NOW()</div>
+                        <div class="function-syntax">TODAY()<br>NOW()</div>
+                        <div class="function-desc">Get current date or current date/time. Real-time vibes!</div>
+                    </div>
+                    
+                    <div class="dax-function">
+                        <div class="category-badge">DATE</div>
+                        <div class="function-name">DATEDIFF()</div>
+                        <div class="function-syntax">DATEDIFF(start_date, end_date, interval)</div>
+                        <div class="function-desc">Calculate the difference between two dates. Interval can be DAY, MONTH, YEAR, etc.</div>
+                    </div>
+                    
+                    <div class="dax-function">
+                        <div class="category-badge">DATE</div>
+                        <div class="function-name">DATEADD()</div>
+                        <div class="function-syntax">DATEADD(dates, number_of_intervals, interval)</div>
+                        <div class="function-desc">Shift dates by a specified time period. Time travel in DAX!</div>
+                    </div>
+                </div>
+                
+                <div class="tip-box">
+                    Use CALENDAR() or CALENDARAUTO() to create date tables. Your future self will thank you! 📅
+                </div>
+            </div>
+            
+            <!-- Aggregation Functions -->
+            <div class="section">
+                <h2><span class="emoji">🧮</span> Aggregation Functions (Math is Life)</h2>
+                
+                <div class="formula-grid">
+                    <div class="dax-function">
+                        <div class="category-badge">MATH</div>
+                        <div class="function-name">SUM() / AVERAGE()</div>
+                        <div class="function-syntax">SUM(column)<br>AVERAGE(column)</div>
+                        <div class="function-desc">Basic math functions. The bread and butter of data analysis.</div>
+                    </div>
+                    
+                    <div class="dax-function">
+                        <div class="category-badge">MATH</div>
+                        <div class="function-name">SUMX() / AVERAGEX()</div>
+                        <div class="function-syntax">SUMX(table, expression)<br>AVERAGEX(table, expression)</div>
+                        <div class="function-desc">Iterator functions that apply expressions row by row. More flexible than basic SUM/AVERAGE.</div>
+                    </div>
+                    
+                    <div class="dax-function">
+                        <div class="category-badge">MATH</div>
+                        <div class="function-name">COUNT() / COUNTA() / COUNTX()</div>
+                        <div class="function-syntax">COUNT(column)<br>COUNTA(column)<br>COUNTX(table, expression)</div>
+                        <div class="function-desc">COUNT numbers, COUNTA non-blanks, COUNTX with expressions.</div>
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    Remember: SUM() works on columns, SUMX() works on tables with expressions. Don't mix them up!
+                </div>
+            </div>
+            
+            <!-- Filter Functions -->
+            <div class="section">
+                <h2><span class="emoji">🎯</span> Filter Functions (The Game Changers)</h2>
+                
+                <div class="formula-grid">
+                    <div class="dax-function">
+                        <div class="category-badge">FILTER</div>
+                        <div class="function-name">CALCULATE()</div>
+                        <div class="function-syntax">CALCULATE(expression, filter1, filter2, ...)</div>
+                        <div class="function-desc">The GOAT of DAX. Modifies filter context. Use it everywhere!</div>
+                    </div>
+                    
+                    <div class="dax-function">
+                        <div class="category-badge">FILTER</div>
+                        <div class="function-name">FILTER()</div>
+                        <div class="function-syntax">FILTER(table, condition)</div>
+                        <div class="function-desc">Returns a table with rows that meet the condition.</div>
+                    </div>
+                    
+                    <div class="dax-function">
+                        <div class="category-badge">FILTER</div>
+                        <div class="function-name">ALL() / ALLEXCEPT()</div>
+                        <div class="function-syntax">ALL(table_or_column)<br>ALLEXCEPT(table, column1, column2, ...)</div>
+                        <div class="function-desc">Remove filters from columns or tables. ALL removes everything, ALLEXCEPT keeps specified columns.</div>
+                    </div>
+                </div>
+                
+                <div class="flex-row">
+                    <div class="flex-item">
+                        <strong>CALCULATE() Examples:</strong><br>
+                        <code>CALCULATE(SUM(Sales), Region = "North")</code><br>
+                        <code>CALCULATE([Total Sales], YEAR(Date) = 2023)</code>
+                    </div>
+                    <div class="flex-item">
+                        <strong>ALL() vs ALLEXCEPT():</strong><br>
+                        <code>ALL(Sales) -- removes all filters</code><br>
+                        <code>ALLEXCEPT(Sales, Region) -- keeps Region filter</code>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Logical Functions -->
+            <div class="section">
+                <h2><span class="emoji">🤖</span> Logical Functions (Decision Making 101)</h2>
+                
+                <div class="formula-grid">
+                    <div class="dax-function">
+                        <div class="category-badge">LOGIC</div>
+                        <div class="function-name">IF() / SWITCH()</div>
+                        <div class="function-syntax">IF(condition, true_value, false_value)<br>SWITCH(expression, value1, result1, value2, result2, ...)</div>
+                        <div class="function-desc">IF for simple conditions, SWITCH for multiple conditions. Choose your fighter!</div>
+                    </div>
+                    
+                    <div class="dax-function">
+                        <div class="category-badge">LOGIC</div>
+                        <div class="function-name">AND() / OR() / NOT()</div>
+                        <div class="function-syntax">AND(condition1, condition2)<br>OR(condition1, condition2)<br>NOT(condition)</div>
+                        <div class="function-desc">Combine logical conditions. Boolean logic for the win!</div>
+                    </div>
+                    
+                    <div class="dax-function">
+                        <div class="category-badge">LOGIC</div>
+                        <div class="function-name">ISBLANK() / ISEMPTY()</div>
+                        <div class="function-syntax">ISBLANK(value)<br>ISEMPTY(table)</div>
+                        <div class="function-desc">Check for blank values or empty tables. Handle your nulls like a pro!</div>
+                    </div>
+                </div>
+                
+                <div class="tip-box">
+                    Use SWITCH() instead of nested IF() statements for cleaner code. Your colleagues will respect you more! ✊
+                </div>
+            </div>
+            
+            <!-- Time Intelligence -->
+            <div class="section">
+                <h2><span class="emoji">⏰</span> Time Intelligence (Time Travel Magic)</h2>
+                
+                <div class="formula-grid">
+                    <div class="dax-function">
+                        <div class="category-badge">TIME</div>
+                        <div class="function-name">SAMEPERIODLASTYEAR()</div>
+                        <div class="function-syntax">SAMEPERIODLASTYEAR(dates)</div>
+                        <div class="function-desc">Compare current period with same period last year. Year-over-year comparisons made easy!</div>
+                    </div>
+                    
+                    <div class="dax-function">
+                        <div class="category-badge">TIME</div>
+                        <div class="function-name">TOTALYTD() / TOTALQTD() / TOTALMTD()</div>
+                        <div class="function-syntax">TOTALYTD(expression, dates)<br>TOTALQTD(expression, dates)<br>TOTALMTD(expression, dates)</div>
+                        <div class="function-desc">Running totals for year, quarter, or month to date.</div>
+                    </div>
+                    
+                    <div class="dax-function">
+                        <div class="category-badge">TIME</div>
+                        <div class="function-name">DATESBETWEEN()</div>
+                        <div class="function-syntax">DATESBETWEEN(dates, start_date, end_date)</div>
+                        <div class="function-desc">Get dates within a specific range. Perfect for custom time periods!</div>
+                    </div>
+                </div>
+                
+                <div class="quick-ref">
+                    <strong>Time Intelligence Requirement:</strong> You MUST have a proper date table with continuous dates! No shortcuts! 📊
+                </div>
+            </div>
+            
+            <!-- Relationship Functions -->
+            <div class="section">
+                <h2><span class="emoji">🔗</span> Relationship Functions (Connect the Dots)</h2>
+                
+                <div class="formula-grid">
+                    <div class="dax-function">
+                        <div class="category-badge">RELATIONSHIP</div>
+                        <div class="function-name">RELATED() / RELATEDTABLE()</div>
+                        <div class="function-syntax">RELATED(column)<br>RELATEDTABLE(table)</div>
+                        <div class="function-desc">RELATED gets values from the "one" side, RELATEDTABLE from the "many" side.</div>
+                    </div>
+                    
+                    <div class="dax-function">
+                        <div class="category-badge">RELATIONSHIP</div>
+                        <div class="function-name">USERELATIONSHIP()</div>
+                        <div class="function-syntax">USERELATIONSHIP(column1, column2)</div>
+                        <div class="function-desc">Activate inactive relationships. For when you have multiple date relationships!</div>
+                    </div>
+                    
+                    <div class="dax-function">
+                        <div class="category-badge">RELATIONSHIP</div>
+                        <div class="function-name">LOOKUPVALUE()</div>
+                        <div class="function-syntax">LOOKUPVALUE(return_column, search_column, search_value)</div>
+                        <div class="function-desc">Like VLOOKUP but better. Find values across tables without relationships.</div>
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    RELATED() and RELATEDTABLE() only work when there's an active relationship. Check your model first!
+                </div>
+            </div>
+            
+            <!-- Common Patterns -->
+            <div class="section">
+                <h2><span class="emoji">💡</span> Common DAX Patterns (The Greatest Hits)</h2>
+                
+                <h3>Running Totals</h3>
+                <div class="function-syntax">
+Running Total = 
+CALCULATE(
+    SUM(Sales[Amount]),
+    FILTER(
+        ALL(Sales[Date]),
+        Sales[Date] <= MAX(Sales[Date])
+    )
+)
+                </div>
+                
+                <h3>Ranking</h3>
+                <div class="function-syntax">
+Product Rank = 
+RANKX(
+    ALL(Products[Product]),
+    CALCULATE(SUM(Sales[Amount])),
+    ,
+    DESC
+)
+                </div>
+                
+                <h3>Previous Period Comparison</h3>
+                <div class="function-syntax">
+Previous Month Sales = 
+CALCULATE(
+    SUM(Sales[Amount]),
+    DATEADD(Calendar[Date], -1, MONTH)
+)
+                </div>
+                
+                <h3>Percentage of Total</h3>
+                <div class="function-syntax">
+% of Total = 
+DIVIDE(
+    SUM(Sales[Amount]),
+    CALCULATE(
+        SUM(Sales[Amount]),
+        ALL(Products[Category])
+    )
+)
+                </div>
+                
+                <div class="tip-box">
+                    Always use DIVIDE() instead of "/" to handle division by zero. It returns BLANK instead of error!
+                </div>
+            </div>
+            
+            <!-- Pro Tips -->
+            <div class="section">
+                <h2><span class="emoji">🚀</span> Pro Tips (Level Up Your Game)</h2>
+                
+                <div class="flex-row">
+                    <div class="flex-item">
+                        <h3>Performance Tips</h3>
+                        <ul>
+                            <li>Use variables (VAR) to store repeated calculations</li>
+                            <li>SUMX > SUM when you need row-by-row calculations</li>
+                            <li>Avoid using FILTER() in CALCULATE() when possible</li>
+                            <li>Use KEEPFILTERS() to add filters instead of overriding</li>
+                        </ul>
+                    </div>
+                    <div class="flex-item">
+                        <h3>Best Practices</h3>
+                        <ul>
+                            <li>Name your measures clearly (no cryptic abbreviations!)</li>
+                            <li>Use proper formatting in your DAX code</li>
+                            <li>Comment your complex formulas</li>
+                            <li>Test edge cases (nulls, zeros, empty tables)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>Variable Usage (VAR)</h3>
+                <div class="function-syntax">
+Sales Growth = 
+VAR CurrentSales = SUM(Sales[Amount])
+VAR PreviousYearSales = 
+    CALCULATE(
+        SUM(Sales[Amount]),
+        SAMEPERIODLASTYEAR(Calendar[Date])
+    )
+RETURN
+    DIVIDE(CurrentSales - PreviousYearSales, PreviousYearSales)
+                </div>
+                
+                <div class="tip-box">
+                    Variables make your code more readable and can improve performance by avoiding repeated calculations!
+                </div>
+            </div>
+            
+            <!-- Troubleshooting -->
+            <div class="section">
+                <h2><span class="emoji">🐛</span> Common Issues (Debug Like a Pro)</h2>
+                
+                <div class="formula-grid">
+                    <div class="warning-box">
+                        <strong>Circular Dependencies:</strong> When measures reference each other. Break the cycle!
+                    </div>
+                    <div class="warning-box">
+                        <strong>Filter Context Issues:</strong> Understanding row context vs filter context is crucial!
+                    </div>
+                    <div class="warning-box">
+                        <strong>BLANK vs 0:</strong> They're different! Use ISBLANK() to check, use IF() to handle.
+                    </div>
+                </div>
+                
+                <h3>Quick Fixes</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Getting wrong totals?</strong> Check if you need SUMX instead of SUM</li>
+                    <li><strong>Time intelligence not working?</strong> Verify your date table is properly marked</li>
+                    <li><strong>RELATED() returning blank?</strong> Check your relationships and cardinality</li>
+                    <li><strong>Performance issues?</strong> Look for unnecessary FILTER() functions</li>
+                </ul>
+                
+                <div class="tip-box">
+                    Use DAX Studio for performance analysis and query optimization. It's free and incredibly powerful! 🔧
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div style="text-align: center; padding: 40px; background: #2c3e50; color: white; border-radius: 15px; margin-top: 40px;">
+                <h3>You've got this! 🎯</h3>
+                <p style="margin-top: 15px; font-size: 1.1em;">Keep practicing, keep building, and remember - every DAX master started as a beginner!</p>
+                <div style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">
+                    Made with ❤️ for the PowerBI community | © 2025
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
