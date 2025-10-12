@@ -5,42 +5,33 @@ A centralized repository of learning resources, tutorials, and reference materia
 ## Repository Structure
 
 ```
-Important_Study_Materials/
+Study-Resource-Hub/
 ├── Python/                 # Python programming resources
-├── JavaScript/            # JavaScript and Node.js resources
-├── Machine_Learning/      # Machine Learning and AI resources
-├── Data_Science/         # Data Science, Analytics, and Statistics
-├── Test_Automation/      # Testing frameworks and automation tools
-├── Web_Development/      # Full-stack web development resources
-└── Others/               # Miscellaneous learning materials
+├── JavaScript/             # JavaScript and Node.js resources
+├── Machine_Learning/       # Machine Learning and AI resources
+├── Data_Science/           # Data Science, Analytics, and Statistics
+├── Test_Automation/        # Testing frameworks and automation tools
+├── Web_Development/        # Full-stack web development resources
+├── git/                    # Git basics, intermediate, and advanced
+├── JavaStream/             # Java Streams and related topics
+├── MLOps/                  # Machine Learning Operations resources
+├── powerbi/                # Power BI cheatsheets and resources
+└── Others/                 # Miscellaneous learning materials
 ```
 
-## Categories
+## Categories & Resources
 
-### GitHub Repositories
-- [Mastering GitHub Copilot](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming) - learn how to collaborate with AI using natural-language prompts that initiate multi-step solutions—from initial planning and architecture suggestions to code generation, testing, and iteration.
-- [Computer Science courses with video lectures](https://github.com/Developer-Y/cs-video-courses) - An awesome place to get all video tutorials under one page. Specially for Computer Science Subjects 
+- **GitHub Repositories**
+  - [Mastering GitHub Copilot](https://github.com/microsoft/Mastering-GitHub-Copilot-for-Paired-Programming) – Collaborate with AI using natural-language prompts for code generation, testing, and iteration.
+  - [Computer Science courses with video lectures](https://github.com/Developer-Y/cs-video-courses) – Comprehensive video tutorials for Computer Science subjects.
 
-### Python
-Python programming language resources, including frameworks, libraries, and best practices.
-
-### JavaScript
-JavaScript programming resources, including frontend frameworks, Node.js, and modern JavaScript features.
-
-### Machine Learning
-Resources for artificial intelligence, machine learning algorithms, deep learning, and related tools.
-
-### Data Science
-Materials related to data analysis, visualization, statistics, and big data technologies.
-
-### Test Automation
-Resources for software testing, test automation frameworks, and QA methodologies.
-
-### Web Development
-Full-stack web development resources, including frontend, backend, and deployment.
-
-### Others
-Additional learning materials and resources that don't fit in the above categories.
+- **Python** – Programming language resources, frameworks, libraries, and best practices.
+- **JavaScript** – Frontend frameworks, Node.js, and modern JavaScript features.
+- **Machine Learning** – AI, machine learning algorithms, deep learning, and related tools.
+- **Data Science** – Data analysis, visualization, statistics, and big data technologies.
+- **Test Automation** – Software testing, automation frameworks, and QA methodologies.
+- **Web Development** – Full-stack web development, frontend, backend, and deployment.
+- **Others** – Additional learning materials not covered above.
 
 ## How to Use This Repository
 
@@ -67,5 +58,3 @@ Each directory contains its own README.md file with:
 ## License
 
 This repository is meant for educational purposes. All links and resources belong to their respective owners.
-
-
