@@ -355,6 +355,60 @@ cd
 cd
 </code></pre>
 <p>This is a shortcut way to return to your home directory.</p>
+<h2>20. `echo hello`</h2>
+<p>Purpose: Prints text to the terminal.</p>
+<p>Syntax:</p>
+<pre><code>
+echo hello
+</code></pre>
+<p>Example:</p>
+<pre><code>
+echo hello
+</code></pre>
+<p>Output:</p>
+<pre><code>
+hello
+</code></pre>
+<p>Use it when you want to display a message on the screen.</p>
+<h2>21. `echo &quot;welcome&quot; &gt; file_name`</h2>
+<p>Purpose: Writes text into a file.</p>
+<p>Syntax:</p>
+<pre><code>
+echo &quot;welcome&quot; &gt; file_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+echo &quot;welcome&quot; &gt; notes.txt
+</code></pre>
+<p>What it does:</p>
+<ul>
+<li>creates the file if it does not exist</li>
+<li>writes `welcome` into the file</li>
+<li>replaces old content if the file already has something inside it</li>
+</ul>
+<p>Important:</p>
+<ul>
+<li>`&gt;` overwrites the file content.</li>
+</ul>
+<h2>22. `echo &quot;to linux&quot; &gt;&gt; file_name`</h2>
+<p>Purpose: Adds text to the end of a file.</p>
+<p>Syntax:</p>
+<pre><code>
+echo &quot;to linux&quot; &gt;&gt; file_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+echo &quot;to linux&quot; &gt;&gt; notes.txt
+</code></pre>
+<p>What it does:</p>
+<ul>
+<li>adds new text at the end of the file</li>
+<li>keeps the old content unchanged</li>
+</ul>
+<p>Important:</p>
+<ul>
+<li>`&gt;&gt;` appends content instead of replacing it.</li>
+</ul>
 <h2>Quick Revision Table</h2>
 <table class="revision-table">
 <thead><tr><th>Command</th><th>Use</th></tr></thead>
@@ -378,6 +432,9 @@ cd
 <tr><td>`cd ../../..`</td><td>Move up three directory levels</td></tr>
 <tr><td>`cd ~`</td><td>Move to home directory</td></tr>
 <tr><td>`cd`</td><td>Move to home directory</td></tr>
+<tr><td>`echo hello`</td><td>Print text to the terminal</td></tr>
+<tr><td>`echo &quot;welcome&quot; &gt; file_name`</td><td>Write text to a file</td></tr>
+<tr><td>`echo &quot;to linux&quot; &gt;&gt; file_name`</td><td>Append text to a file</td></tr>
 </tbody>
 </table>
 <h2>Practice Commands</h2>
@@ -391,7 +448,10 @@ mkdir -p project/src/components
 cd project/src/components
 cd ../../..
 sudo nano file1.txt
+echo &quot;welcome&quot; &gt; file1.txt
+echo &quot;to linux&quot; &gt;&gt; file1.txt
 cat file1.txt
+echo hello
 ls
 ls -a
 ls -s
@@ -408,6 +468,7 @@ clear
 <li>`mkdir` is for creating directories.</li>
 <li>`cd` is for changing directories.</li>
 <li>`cd ~` and `cd` both take you to the home directory.</li>
+<li>`echo` can print text or write text into files.</li>
 <li>`touch` is for creating empty files or updating timestamps.</li>
 <li>`clear` only cleans the terminal display.</li>
 <li>`ll` may not work on every Linux system.</li>

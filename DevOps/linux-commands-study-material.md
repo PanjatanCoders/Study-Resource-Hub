@@ -389,6 +389,77 @@ cd
 
 This is a shortcut way to return to your home directory.
 
+## 20. `echo hello`
+
+Purpose: Prints text to the terminal.
+
+Syntax:
+
+```bash
+echo hello
+```
+
+Example:
+
+```bash
+echo hello
+```
+
+Output:
+
+```bash
+hello
+```
+
+Use it when you want to display a message on the screen.
+
+## 21. `echo "welcome" > file_name`
+
+Purpose: Writes text into a file.
+
+Syntax:
+
+```bash
+echo "welcome" > file_name
+```
+
+Example:
+
+```bash
+echo "welcome" > notes.txt
+```
+
+What it does:
+- creates the file if it does not exist
+- writes `welcome` into the file
+- replaces old content if the file already has something inside it
+
+Important:
+- `>` overwrites the file content.
+
+## 22. `echo "to linux" >> file_name`
+
+Purpose: Adds text to the end of a file.
+
+Syntax:
+
+```bash
+echo "to linux" >> file_name
+```
+
+Example:
+
+```bash
+echo "to linux" >> notes.txt
+```
+
+What it does:
+- adds new text at the end of the file
+- keeps the old content unchanged
+
+Important:
+- `>>` appends content instead of replacing it.
+
 ## Quick Revision Table
 
 | Command | Use |
@@ -412,6 +483,9 @@ This is a shortcut way to return to your home directory.
 | `cd ../../..` | Move up three directory levels |
 | `cd ~` | Move to home directory |
 | `cd` | Move to home directory |
+| `echo hello` | Print text to the terminal |
+| `echo "welcome" > file_name` | Write text to a file |
+| `echo "to linux" >> file_name` | Append text to a file |
 
 ## Practice Commands
 
@@ -426,7 +500,10 @@ mkdir -p project/src/components
 cd project/src/components
 cd ../../..
 sudo nano file1.txt
+echo "welcome" > file1.txt
+echo "to linux" >> file1.txt
 cat file1.txt
+echo hello
 ls
 ls -a
 ls -s
@@ -444,6 +521,7 @@ clear
 - `mkdir` is for creating directories.
 - `cd` is for changing directories.
 - `cd ~` and `cd` both take you to the home directory.
+- `echo` can print text or write text into files.
 - `touch` is for creating empty files or updating timestamps.
 - `clear` only cleans the terminal display.
 - `ll` may not work on every Linux system.
