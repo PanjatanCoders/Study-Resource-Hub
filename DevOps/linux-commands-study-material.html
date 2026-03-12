@@ -409,6 +409,338 @@ echo &quot;to linux&quot; &gt;&gt; notes.txt
 <ul>
 <li>`&gt;&gt;` appends content instead of replacing it.</li>
 </ul>
+<h1>Day 2 Commands</h1>
+<h2>23. `cat file1 &gt;&gt; file2`</h2>
+<p>Purpose: Appends the contents of `file1` to `file2`.</p>
+<p>Syntax:</p>
+<pre><code>
+cat file1 &gt;&gt; file2
+</code></pre>
+<p>Example:</p>
+<pre><code>
+cat notes1.txt &gt;&gt; notes2.txt
+</code></pre>
+<p>Important:</p>
+<ul>
+<li>`&gt;&gt;` adds content to the end of `file2`.</li>
+<li>existing content in `file2` remains safe.</li>
+</ul>
+<h2>24. `cat file1 &gt; file2`</h2>
+<p>Purpose: Copies the contents of `file1` into `file2`.</p>
+<p>Syntax:</p>
+<pre><code>
+cat file1 &gt; file2
+</code></pre>
+<p>Example:</p>
+<pre><code>
+cat notes1.txt &gt; notes2.txt
+</code></pre>
+<p>Important:</p>
+<ul>
+<li>`&gt;` overwrites the old content of `file2`.</li>
+<li>if `file2` already has data, that data will be replaced.</li>
+</ul>
+<h2>25. `pwd`</h2>
+<p>Purpose: Shows the present working directory.</p>
+<p>Syntax:</p>
+<pre><code>
+pwd
+</code></pre>
+<p>Example:</p>
+<pre><code>
+pwd
+</code></pre>
+<p>Use it when you want to know your current location in the terminal.</p>
+<h2>26. `rm file_name`</h2>
+<p>Purpose: Removes a file.</p>
+<p>Syntax:</p>
+<pre><code>
+rm file_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+rm notes.txt
+</code></pre>
+<p>Important:</p>
+<ul>
+<li>this permanently deletes the file from the current location.</li>
+</ul>
+<h2>27. `rm dir`</h2>
+<p>Purpose: Tries to remove a directory.</p>
+<p>Syntax:</p>
+<pre><code>
+rm dir
+</code></pre>
+<p>Important:</p>
+<ul>
+<li>this usually does not remove a normal directory by itself.</li>
+<li>to remove directories, you often need `rm -r dir`.</li>
+<li>for empty directories, another common command is `rmdir dir`.</li>
+</ul>
+<h2>28. `rm -r`</h2>
+<p>Purpose: Removes directories and their contents recursively.</p>
+<p>Syntax:</p>
+<pre><code>
+rm -r dir_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+rm -r project
+</code></pre>
+<p>Important:</p>
+<ul>
+<li>this deletes the directory and everything inside it.</li>
+<li>use it very carefully.</li>
+</ul>
+<h2>29. `cp file_name1 file_name2`</h2>
+<p>Purpose: Copies the content of one file into another file.</p>
+<p>Syntax:</p>
+<pre><code>
+cp file_name1 file_name2
+</code></pre>
+<p>Example:</p>
+<pre><code>
+cp notes.txt backup.txt
+</code></pre>
+<p>If `backup.txt` exists, its content will be replaced.</p>
+<h2>30. `cp file_name dir`</h2>
+<p>Purpose: Copies a file from the current directory into another directory.</p>
+<p>Syntax:</p>
+<pre><code>
+cp file_name dir
+</code></pre>
+<p>Example:</p>
+<pre><code>
+cp notes.txt docs
+</code></pre>
+<p>This copies `notes.txt` into the `docs` folder.</p>
+<h2>31. `cp -r dir1 dir2`</h2>
+<p>Purpose: Copies one directory and its contents into another location.</p>
+<p>Syntax:</p>
+<pre><code>
+cp -r dir1 dir2
+</code></pre>
+<p>Example:</p>
+<pre><code>
+cp -r project backup_project
+</code></pre>
+<p>The `-r` option means recursive copy.</p>
+<h2>32. `mv file_name dir`</h2>
+<p>Purpose: Moves a file into another directory.</p>
+<p>Syntax:</p>
+<pre><code>
+mv file_name dir
+</code></pre>
+<p>Example:</p>
+<pre><code>
+mv notes.txt docs
+</code></pre>
+<p>This moves `notes.txt` into the `docs` folder.</p>
+<h2>33. `mv file_name1 file_name2`</h2>
+<p>Purpose: Renames a file or moves it with a new name.</p>
+<p>Syntax:</p>
+<pre><code>
+mv file_name1 file_name2
+</code></pre>
+<p>Example:</p>
+<pre><code>
+mv notes.txt notes-old.txt
+</code></pre>
+<p>This renames `notes.txt` to `notes-old.txt`.</p>
+<h2>34. `tree`</h2>
+<p>Purpose: Shows files and folders in a tree-style structure.</p>
+<p>Syntax:</p>
+<pre><code>
+tree
+</code></pre>
+<p>Install first time if not available:</p>
+<pre><code>
+sudo apt install tree
+</code></pre>
+<p>Use it when you want to see folder structure clearly.</p>
+<h2>35. `head file_name`</h2>
+<p>Purpose: Shows the first 10 lines of a file.</p>
+<p>Syntax:</p>
+<pre><code>
+head file_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+head notes.txt
+</code></pre>
+<h2>36. `head -n 3 file_name`</h2>
+<p>Purpose: Shows the first 3 lines of a file.</p>
+<p>Syntax:</p>
+<pre><code>
+head -n 3 file_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+head -n 3 notes.txt
+</code></pre>
+<h2>37. `tail file_name`</h2>
+<p>Purpose: Shows the last 10 lines of a file.</p>
+<p>Syntax:</p>
+<pre><code>
+tail file_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+tail notes.txt
+</code></pre>
+<h2>38. `tail -n 3 file_name`</h2>
+<p>Purpose: Shows the last 3 lines of a file.</p>
+<p>Syntax:</p>
+<pre><code>
+tail -n 3 file_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+tail -n 3 notes.txt
+</code></pre>
+<h2>39. `stat file_name/dir`</h2>
+<p>Purpose: Shows detailed information about a file or directory.</p>
+<p>Syntax:</p>
+<pre><code>
+stat file_name
+stat dir_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+stat notes.txt
+</code></pre>
+<p>It can show size, permissions, owner, and timestamps.</p>
+<h2>40. `grep`</h2>
+<p>Meaning: `grep` is commonly explained as Global Regular Expression Print.</p>
+<p>Purpose: Searches for matching text inside a file.</p>
+<h2>41. `grep text file_name`</h2>
+<p>Purpose: Finds matching text in a file.</p>
+<p>Syntax:</p>
+<pre><code>
+grep text file_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+grep linux notes.txt
+</code></pre>
+<h2>42. `grep -i text file_name`</h2>
+<p>Purpose: Searches text without case sensitivity.</p>
+<p>Syntax:</p>
+<pre><code>
+grep -i text file_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+grep -i linux notes.txt
+</code></pre>
+<p>This matches `linux`, `Linux`, and `LINUX`.</p>
+<h2>43. `grep -n text file_name`</h2>
+<p>Purpose: Searches text and also shows line numbers.</p>
+<p>Syntax:</p>
+<pre><code>
+grep -n text file_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+grep -n linux notes.txt
+</code></pre>
+<h2>44. `sed &#x27;s/old_word/new_word/&#x27; file_name`</h2>
+<p>Purpose: Replaces the first matching word in each line when showing output.</p>
+<p>Syntax:</p>
+<pre><code>
+sed &#x27;s/old_word/new_word/&#x27; file_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+sed &#x27;s/linux/Linux/&#x27; notes.txt
+</code></pre>
+<p>Important:</p>
+<ul>
+<li>this shows the changed output in the terminal.</li>
+<li>it does not change the original file.</li>
+</ul>
+<h2>45. `sed -i &#x27;s/old_word/new_word/&#x27; file_name`</h2>
+<p>Purpose: Replaces matching text directly inside the file.</p>
+<p>Syntax:</p>
+<pre><code>
+sed -i &#x27;s/old_word/new_word/&#x27; file_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+sed -i &#x27;s/linux/Linux/&#x27; notes.txt
+</code></pre>
+<p>Important:</p>
+<ul>
+<li>`-i` means in-place editing.</li>
+<li>this changes the real file.</li>
+</ul>
+<h2>46. `sed &#x27;3d&#x27; file_name`</h2>
+<p>Purpose: Deletes line 3 in the displayed output.</p>
+<p>Syntax:</p>
+<pre><code>
+sed &#x27;3d&#x27; file_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+sed &#x27;3d&#x27; notes.txt
+</code></pre>
+<p>Important:</p>
+<ul>
+<li>this does not change the original file.</li>
+</ul>
+<h2>47. `sed -i &#x27;3d&#x27; file_name`</h2>
+<p>Purpose: Deletes line 3 directly from the file.</p>
+<p>Syntax:</p>
+<pre><code>
+sed -i &#x27;3d&#x27; file_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+sed -i &#x27;3d&#x27; notes.txt
+</code></pre>
+<h2>48. `df`</h2>
+<p>Purpose: Shows disk space usage.</p>
+<p>Syntax:</p>
+<pre><code>
+df
+</code></pre>
+<p>Example:</p>
+<pre><code>
+df
+</code></pre>
+<h2>49. `df -h`</h2>
+<p>Purpose: Shows disk space usage in human-readable format.</p>
+<p>Syntax:</p>
+<pre><code>
+df -h
+</code></pre>
+<p>Example:</p>
+<pre><code>
+df -h
+</code></pre>
+<p>The `-h` option shows sizes like KB, MB, and GB.</p>
+<h2>50. `sudo su`</h2>
+<p>Purpose: Switches to the superuser account.</p>
+<p>Syntax:</p>
+<pre><code>
+sudo su
+</code></pre>
+<p>Important:</p>
+<ul>
+<li>this gives administrator-level access.</li>
+<li>use it carefully because you can change system files.</li>
+</ul>
+<h2>51. `exit`</h2>
+<p>Purpose: Exits the current shell or user session.</p>
+<p>Syntax:</p>
+<pre><code>
+exit
+</code></pre>
+<p>Example:</p>
+<pre><code>
+exit
+</code></pre>
+<p>Use it to leave `sudo su`, a terminal session, or a shell.</p>
 <h2>Quick Revision Table</h2>
 <table class="revision-table">
 <thead><tr><th>Command</th><th>Use</th></tr></thead>
@@ -435,6 +767,34 @@ echo &quot;to linux&quot; &gt;&gt; notes.txt
 <tr><td>`echo hello`</td><td>Print text to the terminal</td></tr>
 <tr><td>`echo &quot;welcome&quot; &gt; file_name`</td><td>Write text to a file</td></tr>
 <tr><td>`echo &quot;to linux&quot; &gt;&gt; file_name`</td><td>Append text to a file</td></tr>
+<tr><td>`cat file1 &gt;&gt; file2`</td><td>Append file1 content into file2</td></tr>
+<tr><td>`cat file1 &gt; file2`</td><td>Copy file1 content into file2</td></tr>
+<tr><td>`pwd`</td><td>Show present working directory</td></tr>
+<tr><td>`rm file_name`</td><td>Remove a file</td></tr>
+<tr><td>`rm dir`</td><td>Try to remove a directory</td></tr>
+<tr><td>`rm -r dir_name`</td><td>Remove a directory recursively</td></tr>
+<tr><td>`cp file_name1 file_name2`</td><td>Copy one file into another</td></tr>
+<tr><td>`cp file_name dir`</td><td>Copy a file into a directory</td></tr>
+<tr><td>`cp -r dir1 dir2`</td><td>Copy a directory recursively</td></tr>
+<tr><td>`mv file_name dir`</td><td>Move a file into a directory</td></tr>
+<tr><td>`mv file_name1 file_name2`</td><td>Rename or move a file</td></tr>
+<tr><td>`tree`</td><td>Show directory structure in tree form</td></tr>
+<tr><td>`head file_name`</td><td>Show first 10 lines</td></tr>
+<tr><td>`head -n 3 file_name`</td><td>Show first 3 lines</td></tr>
+<tr><td>`tail file_name`</td><td>Show last 10 lines</td></tr>
+<tr><td>`tail -n 3 file_name`</td><td>Show last 3 lines</td></tr>
+<tr><td>`stat file_name/dir`</td><td>Show detailed file or directory info</td></tr>
+<tr><td>`grep text file_name`</td><td>Search text in a file</td></tr>
+<tr><td>`grep -i text file_name`</td><td>Search text ignoring case</td></tr>
+<tr><td>`grep -n text file_name`</td><td>Search text with line numbers</td></tr>
+<tr><td>`sed &#x27;s/old_word/new_word/&#x27; file_name`</td><td>Replace text in output only</td></tr>
+<tr><td>`sed -i &#x27;s/old_word/new_word/&#x27; file_name`</td><td>Replace text inside the file</td></tr>
+<tr><td>`sed &#x27;3d&#x27; file_name`</td><td>Delete line 3 in output only</td></tr>
+<tr><td>`sed -i &#x27;3d&#x27; file_name`</td><td>Delete line 3 from the file</td></tr>
+<tr><td>`df`</td><td>Show disk space usage</td></tr>
+<tr><td>`df -h`</td><td>Show human-readable disk space</td></tr>
+<tr><td>`sudo su`</td><td>Switch to superuser</td></tr>
+<tr><td>`exit`</td><td>Exit the current shell</td></tr>
 </tbody>
 </table>
 <h2>Practice Commands</h2>
@@ -451,11 +811,28 @@ sudo nano file1.txt
 echo &quot;welcome&quot; &gt; file1.txt
 echo &quot;to linux&quot; &gt;&gt; file1.txt
 cat file1.txt
+cat file1.txt &gt; copy.txt
+cat file1.txt &gt;&gt; copy.txt
 echo hello
+pwd
+head file1.txt
+head -n 3 file1.txt
+tail file1.txt
+tail -n 3 file1.txt
+grep welcome file1.txt
+grep -i welcome file1.txt
+grep -n welcome file1.txt
+sed &#x27;s/welcome/Welcome/&#x27; file1.txt
+stat file1.txt
+cp file1.txt backup.txt
+mv backup.txt dir1
 ls
 ls -a
 ls -s
 ls -R
+tree
+df
+df -h
 cd dir1
 cd ..
 cd ~
@@ -469,6 +846,12 @@ clear
 <li>`cd` is for changing directories.</li>
 <li>`cd ~` and `cd` both take you to the home directory.</li>
 <li>`echo` can print text or write text into files.</li>
+<li>`cp` copies files and directories.</li>
+<li>`mv` moves or renames files and directories.</li>
+<li>`rm -r` removes folders and their contents.</li>
+<li>`grep` searches text inside files.</li>
+<li>`sed` edits or transforms text.</li>
+<li>`head` and `tail` help preview file content.</li>
 <li>`touch` is for creating empty files or updating timestamps.</li>
 <li>`clear` only cleans the terminal display.</li>
 <li>`ll` may not work on every Linux system.</li>
