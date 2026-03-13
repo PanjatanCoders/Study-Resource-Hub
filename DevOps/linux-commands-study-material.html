@@ -96,6 +96,13 @@
 <h2>Online Practice Site</h2>
 <p>Practice these commands here:</p>
 <p>https://killercoda.com/playgrounds/scenario/ubuntu</p>
+<h2>Course Structure</h2>
+<ul>
+<li>Day 1: Basic file, directory, and terminal commands</li>
+<li>Day 2: File management, text processing, and disk usage commands</li>
+<li>Day 3: Package management, networking, processes, compression, and user management</li>
+</ul>
+<h1>Day 1 Commands</h1>
 <h2>1. `ls`</h2>
 <p>Purpose: Lists files and folders in the current directory.</p>
 <p>Syntax:</p>
@@ -741,7 +748,368 @@ exit
 exit
 </code></pre>
 <p>Use it to leave `sudo su`, a terminal session, or a shell.</p>
-<h2>Quick Revision Table</h2>
+<h1>Day 3 Commands</h1>
+<h2>52. `curl`</h2>
+<p>Meaning: `curl` stands for Client URL.</p>
+<p>Purpose: Transfers data from or to a server.</p>
+<p>Syntax:</p>
+<pre><code>
+curl URL
+</code></pre>
+<p>Example:</p>
+<pre><code>
+curl https://example.com
+</code></pre>
+<p>Use it to test URLs, APIs, and downloads.</p>
+<h2>53. `sudo apt update`</h2>
+<p>Purpose: Updates the package list from configured repositories.</p>
+<p>Syntax:</p>
+<pre><code>
+sudo apt update
+</code></pre>
+<p>Use it before installing or upgrading packages.</p>
+<h2>54. `sudo apt upgrade`</h2>
+<p>Purpose: Upgrades installed packages to newer versions.</p>
+<p>Syntax:</p>
+<pre><code>
+sudo apt upgrade
+</code></pre>
+<p>This uses the latest package information downloaded by `apt update`.</p>
+<h2>55. `sudo apt install package_name`</h2>
+<p>Purpose: Installs a package.</p>
+<p>Syntax:</p>
+<pre><code>
+sudo apt install package_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+sudo apt install nginx
+</code></pre>
+<h2>56. `wget`</h2>
+<p>Meaning: `wget` stands for World Wide Web Get.</p>
+<p>Purpose: Downloads files from the web.</p>
+<p>Syntax:</p>
+<pre><code>
+wget URL
+</code></pre>
+<p>Example:</p>
+<pre><code>
+wget https://example.com/file.zip
+</code></pre>
+<h2>57. `ss`</h2>
+<p>Purpose: Shows socket and network connection information.</p>
+<p>Syntax:</p>
+<pre><code>
+ss
+</code></pre>
+<p>Use it to inspect active network connections.</p>
+<h2>58. `ss -u`</h2>
+<p>Purpose: Shows UDP sockets.</p>
+<p>Syntax:</p>
+<pre><code>
+ss -u
+</code></pre>
+<h2>59. `ss -t`</h2>
+<p>Purpose: Shows TCP sockets.</p>
+<p>Syntax:</p>
+<pre><code>
+ss -t
+</code></pre>
+<h2>60. `ss -l`</h2>
+<p>Purpose: Shows listening sockets.</p>
+<p>Syntax:</p>
+<pre><code>
+ss -l
+</code></pre>
+<h2>61. `ss -n`</h2>
+<p>Purpose: Shows numeric addresses and ports without name resolution.</p>
+<p>Syntax:</p>
+<pre><code>
+ss -n
+</code></pre>
+<h2>62. `ifconfig`</h2>
+<p>Purpose: Displays or configures network interfaces.</p>
+<p>Syntax:</p>
+<pre><code>
+ifconfig
+</code></pre>
+<p>Note:</p>
+<ul>
+<li>on some modern Linux systems, `ifconfig` may not be installed by default.</li>
+</ul>
+<h2>63. `ping www.google.com`</h2>
+<p>Purpose: Checks network connectivity to a host.</p>
+<p>Syntax:</p>
+<pre><code>
+ping www.google.com
+</code></pre>
+<p>Use `Ctrl + C` to stop the continuous ping output.</p>
+<h2>64. `which package_name`</h2>
+<p>Purpose: Shows the path of a command.</p>
+<p>Syntax:</p>
+<pre><code>
+which package_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+which nginx
+</code></pre>
+<h2>65. `sudo service package_name status`</h2>
+<p>Purpose: Checks the status of a service.</p>
+<p>Syntax:</p>
+<pre><code>
+sudo service package_name status
+</code></pre>
+<p>Example:</p>
+<pre><code>
+sudo service nginx status
+</code></pre>
+<h2>66. `sudo systemctl status nginx`</h2>
+<p>Purpose: Shows the current status of the `nginx` service.</p>
+<p>Syntax:</p>
+<pre><code>
+sudo systemctl status nginx
+</code></pre>
+<h2>67. `sudo systemctl start nginx`</h2>
+<p>Purpose: Starts the `nginx` service.</p>
+<p>Syntax:</p>
+<pre><code>
+sudo systemctl start nginx
+</code></pre>
+<h2>68. `sudo systemctl stop nginx`</h2>
+<p>Purpose: Stops the `nginx` service.</p>
+<p>Syntax:</p>
+<pre><code>
+sudo systemctl stop nginx
+</code></pre>
+<h2>69. `ps`</h2>
+<p>Purpose: Shows processes running in the current shell session.</p>
+<p>Syntax:</p>
+<pre><code>
+ps
+</code></pre>
+<h2>70. `ps aux`</h2>
+<p>Purpose: Shows detailed information about all running processes.</p>
+<p>Syntax:</p>
+<pre><code>
+ps aux
+</code></pre>
+<h2>71. `top`</h2>
+<p>Purpose: Shows real-time process activity.</p>
+<p>Syntax:</p>
+<pre><code>
+top
+</code></pre>
+<p>Use `q` to quit.</p>
+<h2>72. `htop`</h2>
+<p>Purpose: Shows an interactive process viewer.</p>
+<p>Syntax:</p>
+<pre><code>
+htop
+</code></pre>
+<p>Note:</p>
+<ul>
+<li>`htop` may need to be installed first.</li>
+</ul>
+<h2>73. `kill pid`</h2>
+<p>Purpose: Stops a process using its process ID.</p>
+<p>Syntax:</p>
+<pre><code>
+kill pid
+</code></pre>
+<p>Example:</p>
+<pre><code>
+kill 1234
+</code></pre>
+<h2>74. `uname`</h2>
+<p>Purpose: Shows basic system information.</p>
+<p>Syntax:</p>
+<pre><code>
+uname
+</code></pre>
+<h2>75. `uname -a`</h2>
+<p>Purpose: Shows all available system information.</p>
+<p>Syntax:</p>
+<pre><code>
+uname -a
+</code></pre>
+<h2>76. `whoami`</h2>
+<p>Purpose: Shows the current logged-in username.</p>
+<p>Syntax:</p>
+<pre><code>
+whoami
+</code></pre>
+<h2>77. `hostname`</h2>
+<p>Purpose: Shows the system hostname.</p>
+<p>Syntax:</p>
+<pre><code>
+hostname
+</code></pre>
+<h2>78. `sudo hostnamectl set-hostname &lt;name&gt;`</h2>
+<p>Purpose: Changes the system hostname.</p>
+<p>Syntax:</p>
+<pre><code>
+sudo hostnamectl set-hostname &lt;name&gt;
+</code></pre>
+<p>Example:</p>
+<pre><code>
+sudo hostnamectl set-hostname dev-server
+</code></pre>
+<p>Note:</p>
+<ul>
+<li>you wrote `audo`, which appears to be a typo. The correct command is `sudo`.</li>
+</ul>
+<h2>79. `gzip file_name`</h2>
+<p>Purpose: Compresses a file into gzip format.</p>
+<p>Syntax:</p>
+<pre><code>
+gzip file_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+gzip notes.txt
+</code></pre>
+<h2>80. `gunzip file_name`</h2>
+<p>Purpose: Extracts a gzip-compressed file.</p>
+<p>Syntax:</p>
+<pre><code>
+gunzip file_name.gz
+</code></pre>
+<p>Example:</p>
+<pre><code>
+gunzip notes.txt.gz
+</code></pre>
+<h2>81. `unzip file_name`</h2>
+<p>Purpose: Extracts files from a zip archive.</p>
+<p>Syntax:</p>
+<pre><code>
+unzip file_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+unzip files.zip
+</code></pre>
+<h2>82. `zip`</h2>
+<p>Purpose: Creates a zip archive.</p>
+<p>Syntax:</p>
+<pre><code>
+zip archive_name files
+</code></pre>
+<p>Example:</p>
+<pre><code>
+zip files.zip notes.txt
+</code></pre>
+<h2>83. `zcat`</h2>
+<p>Purpose: Displays the contents of a gzip-compressed file without extracting it manually.</p>
+<p>Syntax:</p>
+<pre><code>
+zcat file_name.gz
+</code></pre>
+<p>Example:</p>
+<pre><code>
+zcat notes.txt.gz
+</code></pre>
+<h2>84. `sudo adduser user_name`</h2>
+<p>Purpose: Creates a new user account.</p>
+<p>Syntax:</p>
+<pre><code>
+sudo adduser user_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+sudo adduser devuser
+</code></pre>
+<h2>85. `sudo groupadd group_name`</h2>
+<p>Purpose: Creates a new group.</p>
+<p>Syntax:</p>
+<pre><code>
+sudo groupadd group_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+sudo groupadd developers
+</code></pre>
+<h2>86. `id user_name`</h2>
+<p>Purpose: Shows user ID, group ID, and related group information.</p>
+<p>Syntax:</p>
+<pre><code>
+id user_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+id devuser
+</code></pre>
+<h2>87. `getent group group_name`</h2>
+<p>Purpose: Shows information about a specific group.</p>
+<p>Syntax:</p>
+<pre><code>
+getent group group_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+getent group developers
+</code></pre>
+<h2>88. `sudo usermod -aG group_name user_name`</h2>
+<p>Purpose: Adds a user to an existing group.</p>
+<p>Syntax:</p>
+<pre><code>
+sudo usermod -aG group_name user_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+sudo usermod -aG developers devuser
+</code></pre>
+<p>Important:</p>
+<ul>
+<li>`-aG` appends the user to the group without removing existing group memberships.</li>
+</ul>
+<h2>89. `groups user_name`</h2>
+<p>Purpose: Shows the groups a user belongs to.</p>
+<p>Syntax:</p>
+<pre><code>
+groups user_name
+</code></pre>
+<p>Example:</p>
+<pre><code>
+groups devuser
+</code></pre>
+<p>Note:</p>
+<ul>
+<li>you wrote `group username`, but the common Linux command is `groups user_name`.</li>
+</ul>
+<h2>90. `cat /etc/passwd`</h2>
+<p>Purpose: Shows the list of user account entries.</p>
+<p>Syntax:</p>
+<pre><code>
+cat /etc/passwd
+</code></pre>
+<h2>91. `getent group`</h2>
+<p>Purpose: Shows all group entries available on the system.</p>
+<p>Syntax:</p>
+<pre><code>
+getent group
+</code></pre>
+<h2>92. `sudo deluser username`</h2>
+<p>Purpose: Removes a user account.</p>
+<p>Syntax:</p>
+<pre><code>
+sudo deluser username
+</code></pre>
+<p>Example:</p>
+<pre><code>
+sudo deluser devuser
+</code></pre>
+<h2>93. `sudo groupdel groupname`</h2>
+<p>Purpose: Deletes a group.</p>
+<p>Syntax:</p>
+<pre><code>
+sudo groupdel groupname
+</code></pre>
+<p>Example:</p>
+<pre><code>
+sudo groupdel developers
+</code></pre>
+<h2>Day 1 Quick Revision</h2>
 <table class="revision-table">
 <thead><tr><th>Command</th><th>Use</th></tr></thead>
 <tbody>
@@ -767,6 +1135,36 @@ exit
 <tr><td>`echo hello`</td><td>Print text to the terminal</td></tr>
 <tr><td>`echo &quot;welcome&quot; &gt; file_name`</td><td>Write text to a file</td></tr>
 <tr><td>`echo &quot;to linux&quot; &gt;&gt; file_name`</td><td>Append text to a file</td></tr>
+</tbody>
+</table>
+<h2>Day 1 Practice</h2>
+<pre><code>
+mkdir linux_practice
+cd linux_practice
+touch file1.txt file2.txt
+mkdir dir1 dir2 dir3
+mkdir -p project/src/components
+cd project/src/components
+cd ../../..
+sudo nano file1.txt
+echo &quot;welcome&quot; &gt; file1.txt
+echo &quot;to linux&quot; &gt;&gt; file1.txt
+cat file1.txt
+echo hello
+ls
+ls -a
+ls -s
+ls -R
+cd dir1
+cd ..
+cd ~
+cd
+clear
+</code></pre>
+<h2>Day 2 Quick Revision</h2>
+<table class="revision-table">
+<thead><tr><th>Command</th><th>Use</th></tr></thead>
+<tbody>
 <tr><td>`cat file1 &gt;&gt; file2`</td><td>Append file1 content into file2</td></tr>
 <tr><td>`cat file1 &gt; file2`</td><td>Copy file1 content into file2</td></tr>
 <tr><td>`pwd`</td><td>Show present working directory</td></tr>
@@ -797,24 +1195,11 @@ exit
 <tr><td>`exit`</td><td>Exit the current shell</td></tr>
 </tbody>
 </table>
-<h2>Practice Commands</h2>
-<p>Try these in order:</p>
+<h2>Day 2 Practice</h2>
 <pre><code>
-mkdir linux_practice
-cd linux_practice
-touch file1.txt file2.txt
-mkdir dir1 dir2 dir3
-mkdir -p project/src/components
-cd project/src/components
-cd ../../..
-sudo nano file1.txt
-echo &quot;welcome&quot; &gt; file1.txt
-echo &quot;to linux&quot; &gt;&gt; file1.txt
-cat file1.txt
+pwd
 cat file1.txt &gt; copy.txt
 cat file1.txt &gt;&gt; copy.txt
-echo hello
-pwd
 head file1.txt
 head -n 3 file1.txt
 tail file1.txt
@@ -826,34 +1211,105 @@ sed &#x27;s/welcome/Welcome/&#x27; file1.txt
 stat file1.txt
 cp file1.txt backup.txt
 mv backup.txt dir1
-ls
-ls -a
-ls -s
-ls -R
 tree
 df
 df -h
-cd dir1
-cd ..
-cd ~
-cd
-clear
+sudo su
+exit
+</code></pre>
+<h2>Day 3 Quick Revision</h2>
+<table class="revision-table">
+<thead><tr><th>Command</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td>`curl URL`</td><td>Transfer data from or to a server</td></tr>
+<tr><td>`sudo apt update`</td><td>Update package list</td></tr>
+<tr><td>`sudo apt upgrade`</td><td>Upgrade installed packages</td></tr>
+<tr><td>`sudo apt install package_name`</td><td>Install a package</td></tr>
+<tr><td>`wget URL`</td><td>Download a file from the web</td></tr>
+<tr><td>`ss`</td><td>Show socket information</td></tr>
+<tr><td>`ss -u`</td><td>Show UDP sockets</td></tr>
+<tr><td>`ss -t`</td><td>Show TCP sockets</td></tr>
+<tr><td>`ss -l`</td><td>Show listening sockets</td></tr>
+<tr><td>`ss -n`</td><td>Show numeric sockets and ports</td></tr>
+<tr><td>`ifconfig`</td><td>Show network interface information</td></tr>
+<tr><td>`ping www.google.com`</td><td>Check network connectivity</td></tr>
+<tr><td>`which package_name`</td><td>Show command path</td></tr>
+<tr><td>`sudo service package_name status`</td><td>Check service status</td></tr>
+<tr><td>`sudo systemctl status nginx`</td><td>Show nginx status</td></tr>
+<tr><td>`sudo systemctl start nginx`</td><td>Start nginx</td></tr>
+<tr><td>`sudo systemctl stop nginx`</td><td>Stop nginx</td></tr>
+<tr><td>`ps`</td><td>Show current-shell processes</td></tr>
+<tr><td>`ps aux`</td><td>Show all running processes</td></tr>
+<tr><td>`top`</td><td>Real-time process viewer</td></tr>
+<tr><td>`htop`</td><td>Interactive process viewer</td></tr>
+<tr><td>`kill pid`</td><td>Stop a process by PID</td></tr>
+<tr><td>`uname`</td><td>Show basic system info</td></tr>
+<tr><td>`uname -a`</td><td>Show detailed system info</td></tr>
+<tr><td>`whoami`</td><td>Show current username</td></tr>
+<tr><td>`hostname`</td><td>Show system hostname</td></tr>
+<tr><td>`sudo hostnamectl set-hostname &lt;name&gt;`</td><td>Change system hostname</td></tr>
+<tr><td>`gzip file_name`</td><td>Compress a file</td></tr>
+<tr><td>`gunzip file_name.gz`</td><td>Extract a gzip file</td></tr>
+<tr><td>`unzip file_name`</td><td>Extract a zip file</td></tr>
+<tr><td>`zip archive_name files`</td><td>Create a zip archive</td></tr>
+<tr><td>`zcat file_name.gz`</td><td>View gzip content without extracting</td></tr>
+<tr><td>`sudo adduser user_name`</td><td>Create a user</td></tr>
+<tr><td>`sudo groupadd group_name`</td><td>Create a group</td></tr>
+<tr><td>`id user_name`</td><td>Show user and group IDs</td></tr>
+<tr><td>`getent group group_name`</td><td>Show one group entry</td></tr>
+<tr><td>`sudo usermod -aG group_name user_name`</td><td>Add user to a group</td></tr>
+<tr><td>`groups user_name`</td><td>Show user groups</td></tr>
+<tr><td>`cat /etc/passwd`</td><td>Show user account entries</td></tr>
+<tr><td>`getent group`</td><td>Show all group entries</td></tr>
+<tr><td>`sudo deluser username`</td><td>Delete a user</td></tr>
+<tr><td>`sudo groupdel groupname`</td><td>Delete a group</td></tr>
+</tbody>
+</table>
+<h2>Day 3 Practice</h2>
+<pre><code>
+curl https://example.com
+wget https://example.com/file.zip
+ss
+ss -t
+ss -u
+ss -l
+ss -n
+ifconfig
+ping www.google.com
+which nginx
+sudo service nginx status
+sudo systemctl status nginx
+ps
+ps aux
+uname
+uname -a
+whoami
+hostname
+gzip copy.txt
+gunzip copy.txt.gz
+zip files.zip file1.txt
+unzip files.zip
+sudo adduser devuser
+sudo groupadd developers
+id devuser
+getent group developers
+groups devuser
+cat /etc/passwd
+getent group
 </code></pre>
 <h2>Key Points to Remember</h2>
 <ul>
-<li>`ls` is for listing contents.</li>
-<li>`mkdir` is for creating directories.</li>
-<li>`cd` is for changing directories.</li>
+<li>Day 1 focuses on navigation, files, folders, and basic terminal usage.</li>
+<li>Day 2 focuses on copying, moving, deleting, searching, and editing text.</li>
+<li>Day 3 focuses on packages, networking, processes, compression, and user management.</li>
 <li>`cd ~` and `cd` both take you to the home directory.</li>
-<li>`echo` can print text or write text into files.</li>
-<li>`cp` copies files and directories.</li>
-<li>`mv` moves or renames files and directories.</li>
-<li>`rm -r` removes folders and their contents.</li>
-<li>`grep` searches text inside files.</li>
-<li>`sed` edits or transforms text.</li>
-<li>`head` and `tail` help preview file content.</li>
-<li>`touch` is for creating empty files or updating timestamps.</li>
-<li>`clear` only cleans the terminal display.</li>
+<li>`rm -r` removes folders and their contents, so use it carefully.</li>
+<li>`grep` searches text inside files, while `sed` changes or transforms text.</li>
+<li>`apt` is used to update, upgrade, and install software.</li>
+<li>`curl` and `wget` are helpful for testing URLs and downloading files.</li>
+<li>`ps`, `top`, and `htop` help monitor processes.</li>
+<li>`gzip`, `gunzip`, `zip`, and `unzip` handle file compression.</li>
+<li>`adduser`, `groupadd`, and `usermod` are used for user and group management.</li>
 <li>`ll` may not work on every Linux system.</li>
 </ul>
   </main>

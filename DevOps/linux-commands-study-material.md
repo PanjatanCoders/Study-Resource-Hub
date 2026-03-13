@@ -8,6 +8,14 @@ Practice these commands here:
 
 https://killercoda.com/playgrounds/scenario/ubuntu
 
+## Course Structure
+
+- Day 1: Basic file, directory, and terminal commands
+- Day 2: File management, text processing, and disk usage commands
+- Day 3: Package management, networking, processes, compression, and user management
+
+# Day 1 Commands
+
 ## 1. `ls`
 
 Purpose: Lists files and folders in the current directory.
@@ -962,7 +970,580 @@ exit
 
 Use it to leave `sudo su`, a terminal session, or a shell.
 
-## Quick Revision Table
+# Day 3 Commands
+
+## 52. `curl`
+
+Meaning: `curl` stands for Client URL.
+
+Purpose: Transfers data from or to a server.
+
+Syntax:
+
+```bash
+curl URL
+```
+
+Example:
+
+```bash
+curl https://example.com
+```
+
+Use it to test URLs, APIs, and downloads.
+
+## 53. `sudo apt update`
+
+Purpose: Updates the package list from configured repositories.
+
+Syntax:
+
+```bash
+sudo apt update
+```
+
+Use it before installing or upgrading packages.
+
+## 54. `sudo apt upgrade`
+
+Purpose: Upgrades installed packages to newer versions.
+
+Syntax:
+
+```bash
+sudo apt upgrade
+```
+
+This uses the latest package information downloaded by `apt update`.
+
+## 55. `sudo apt install package_name`
+
+Purpose: Installs a package.
+
+Syntax:
+
+```bash
+sudo apt install package_name
+```
+
+Example:
+
+```bash
+sudo apt install nginx
+```
+
+## 56. `wget`
+
+Meaning: `wget` stands for World Wide Web Get.
+
+Purpose: Downloads files from the web.
+
+Syntax:
+
+```bash
+wget URL
+```
+
+Example:
+
+```bash
+wget https://example.com/file.zip
+```
+
+## 57. `ss`
+
+Purpose: Shows socket and network connection information.
+
+Syntax:
+
+```bash
+ss
+```
+
+Use it to inspect active network connections.
+
+## 58. `ss -u`
+
+Purpose: Shows UDP sockets.
+
+Syntax:
+
+```bash
+ss -u
+```
+
+## 59. `ss -t`
+
+Purpose: Shows TCP sockets.
+
+Syntax:
+
+```bash
+ss -t
+```
+
+## 60. `ss -l`
+
+Purpose: Shows listening sockets.
+
+Syntax:
+
+```bash
+ss -l
+```
+
+## 61. `ss -n`
+
+Purpose: Shows numeric addresses and ports without name resolution.
+
+Syntax:
+
+```bash
+ss -n
+```
+
+## 62. `ifconfig`
+
+Purpose: Displays or configures network interfaces.
+
+Syntax:
+
+```bash
+ifconfig
+```
+
+Note:
+- on some modern Linux systems, `ifconfig` may not be installed by default.
+
+## 63. `ping www.google.com`
+
+Purpose: Checks network connectivity to a host.
+
+Syntax:
+
+```bash
+ping www.google.com
+```
+
+Use `Ctrl + C` to stop the continuous ping output.
+
+## 64. `which package_name`
+
+Purpose: Shows the path of a command.
+
+Syntax:
+
+```bash
+which package_name
+```
+
+Example:
+
+```bash
+which nginx
+```
+
+## 65. `sudo service package_name status`
+
+Purpose: Checks the status of a service.
+
+Syntax:
+
+```bash
+sudo service package_name status
+```
+
+Example:
+
+```bash
+sudo service nginx status
+```
+
+## 66. `sudo systemctl status nginx`
+
+Purpose: Shows the current status of the `nginx` service.
+
+Syntax:
+
+```bash
+sudo systemctl status nginx
+```
+
+## 67. `sudo systemctl start nginx`
+
+Purpose: Starts the `nginx` service.
+
+Syntax:
+
+```bash
+sudo systemctl start nginx
+```
+
+## 68. `sudo systemctl stop nginx`
+
+Purpose: Stops the `nginx` service.
+
+Syntax:
+
+```bash
+sudo systemctl stop nginx
+```
+
+## 69. `ps`
+
+Purpose: Shows processes running in the current shell session.
+
+Syntax:
+
+```bash
+ps
+```
+
+## 70. `ps aux`
+
+Purpose: Shows detailed information about all running processes.
+
+Syntax:
+
+```bash
+ps aux
+```
+
+## 71. `top`
+
+Purpose: Shows real-time process activity.
+
+Syntax:
+
+```bash
+top
+```
+
+Use `q` to quit.
+
+## 72. `htop`
+
+Purpose: Shows an interactive process viewer.
+
+Syntax:
+
+```bash
+htop
+```
+
+Note:
+- `htop` may need to be installed first.
+
+## 73. `kill pid`
+
+Purpose: Stops a process using its process ID.
+
+Syntax:
+
+```bash
+kill pid
+```
+
+Example:
+
+```bash
+kill 1234
+```
+
+## 74. `uname`
+
+Purpose: Shows basic system information.
+
+Syntax:
+
+```bash
+uname
+```
+
+## 75. `uname -a`
+
+Purpose: Shows all available system information.
+
+Syntax:
+
+```bash
+uname -a
+```
+
+## 76. `whoami`
+
+Purpose: Shows the current logged-in username.
+
+Syntax:
+
+```bash
+whoami
+```
+
+## 77. `hostname`
+
+Purpose: Shows the system hostname.
+
+Syntax:
+
+```bash
+hostname
+```
+
+## 78. `sudo hostnamectl set-hostname <name>`
+
+Purpose: Changes the system hostname.
+
+Syntax:
+
+```bash
+sudo hostnamectl set-hostname <name>
+```
+
+Example:
+
+```bash
+sudo hostnamectl set-hostname dev-server
+```
+
+Note:
+- you wrote `audo`, which appears to be a typo. The correct command is `sudo`.
+
+## 79. `gzip file_name`
+
+Purpose: Compresses a file into gzip format.
+
+Syntax:
+
+```bash
+gzip file_name
+```
+
+Example:
+
+```bash
+gzip notes.txt
+```
+
+## 80. `gunzip file_name`
+
+Purpose: Extracts a gzip-compressed file.
+
+Syntax:
+
+```bash
+gunzip file_name.gz
+```
+
+Example:
+
+```bash
+gunzip notes.txt.gz
+```
+
+## 81. `unzip file_name`
+
+Purpose: Extracts files from a zip archive.
+
+Syntax:
+
+```bash
+unzip file_name
+```
+
+Example:
+
+```bash
+unzip files.zip
+```
+
+## 82. `zip`
+
+Purpose: Creates a zip archive.
+
+Syntax:
+
+```bash
+zip archive_name files
+```
+
+Example:
+
+```bash
+zip files.zip notes.txt
+```
+
+## 83. `zcat`
+
+Purpose: Displays the contents of a gzip-compressed file without extracting it manually.
+
+Syntax:
+
+```bash
+zcat file_name.gz
+```
+
+Example:
+
+```bash
+zcat notes.txt.gz
+```
+
+## 84. `sudo adduser user_name`
+
+Purpose: Creates a new user account.
+
+Syntax:
+
+```bash
+sudo adduser user_name
+```
+
+Example:
+
+```bash
+sudo adduser devuser
+```
+
+## 85. `sudo groupadd group_name`
+
+Purpose: Creates a new group.
+
+Syntax:
+
+```bash
+sudo groupadd group_name
+```
+
+Example:
+
+```bash
+sudo groupadd developers
+```
+
+## 86. `id user_name`
+
+Purpose: Shows user ID, group ID, and related group information.
+
+Syntax:
+
+```bash
+id user_name
+```
+
+Example:
+
+```bash
+id devuser
+```
+
+## 87. `getent group group_name`
+
+Purpose: Shows information about a specific group.
+
+Syntax:
+
+```bash
+getent group group_name
+```
+
+Example:
+
+```bash
+getent group developers
+```
+
+## 88. `sudo usermod -aG group_name user_name`
+
+Purpose: Adds a user to an existing group.
+
+Syntax:
+
+```bash
+sudo usermod -aG group_name user_name
+```
+
+Example:
+
+```bash
+sudo usermod -aG developers devuser
+```
+
+Important:
+- `-aG` appends the user to the group without removing existing group memberships.
+
+## 89. `groups user_name`
+
+Purpose: Shows the groups a user belongs to.
+
+Syntax:
+
+```bash
+groups user_name
+```
+
+Example:
+
+```bash
+groups devuser
+```
+
+Note:
+- you wrote `group username`, but the common Linux command is `groups user_name`.
+
+## 90. `cat /etc/passwd`
+
+Purpose: Shows the list of user account entries.
+
+Syntax:
+
+```bash
+cat /etc/passwd
+```
+
+## 91. `getent group`
+
+Purpose: Shows all group entries available on the system.
+
+Syntax:
+
+```bash
+getent group
+```
+
+## 92. `sudo deluser username`
+
+Purpose: Removes a user account.
+
+Syntax:
+
+```bash
+sudo deluser username
+```
+
+Example:
+
+```bash
+sudo deluser devuser
+```
+
+## 93. `sudo groupdel groupname`
+
+Purpose: Deletes a group.
+
+Syntax:
+
+```bash
+sudo groupdel groupname
+```
+
+Example:
+
+```bash
+sudo groupdel developers
+```
+
+## Day 1 Quick Revision
 
 | Command | Use |
 |---|---|
@@ -988,6 +1569,37 @@ Use it to leave `sudo su`, a terminal session, or a shell.
 | `echo hello` | Print text to the terminal |
 | `echo "welcome" > file_name` | Write text to a file |
 | `echo "to linux" >> file_name` | Append text to a file |
+
+## Day 1 Practice
+
+```bash
+mkdir linux_practice
+cd linux_practice
+touch file1.txt file2.txt
+mkdir dir1 dir2 dir3
+mkdir -p project/src/components
+cd project/src/components
+cd ../../..
+sudo nano file1.txt
+echo "welcome" > file1.txt
+echo "to linux" >> file1.txt
+cat file1.txt
+echo hello
+ls
+ls -a
+ls -s
+ls -R
+cd dir1
+cd ..
+cd ~
+cd
+clear
+```
+
+## Day 2 Quick Revision
+
+| Command | Use |
+|---|---|
 | `cat file1 >> file2` | Append file1 content into file2 |
 | `cat file1 > file2` | Copy file1 content into file2 |
 | `pwd` | Show present working directory |
@@ -1017,26 +1629,12 @@ Use it to leave `sudo su`, a terminal session, or a shell.
 | `sudo su` | Switch to superuser |
 | `exit` | Exit the current shell |
 
-## Practice Commands
-
-Try these in order:
+## Day 2 Practice
 
 ```bash
-mkdir linux_practice
-cd linux_practice
-touch file1.txt file2.txt
-mkdir dir1 dir2 dir3
-mkdir -p project/src/components
-cd project/src/components
-cd ../../..
-sudo nano file1.txt
-echo "welcome" > file1.txt
-echo "to linux" >> file1.txt
-cat file1.txt
+pwd
 cat file1.txt > copy.txt
 cat file1.txt >> copy.txt
-echo hello
-pwd
 head file1.txt
 head -n 3 file1.txt
 tail file1.txt
@@ -1048,33 +1646,105 @@ sed 's/welcome/Welcome/' file1.txt
 stat file1.txt
 cp file1.txt backup.txt
 mv backup.txt dir1
-ls
-ls -a
-ls -s
-ls -R
 tree
 df
 df -h
-cd dir1
-cd ..
-cd ~
-cd
-clear
+sudo su
+exit
+```
+
+## Day 3 Quick Revision
+
+| Command | Use |
+|---|---|
+| `curl URL` | Transfer data from or to a server |
+| `sudo apt update` | Update package list |
+| `sudo apt upgrade` | Upgrade installed packages |
+| `sudo apt install package_name` | Install a package |
+| `wget URL` | Download a file from the web |
+| `ss` | Show socket information |
+| `ss -u` | Show UDP sockets |
+| `ss -t` | Show TCP sockets |
+| `ss -l` | Show listening sockets |
+| `ss -n` | Show numeric sockets and ports |
+| `ifconfig` | Show network interface information |
+| `ping www.google.com` | Check network connectivity |
+| `which package_name` | Show command path |
+| `sudo service package_name status` | Check service status |
+| `sudo systemctl status nginx` | Show nginx status |
+| `sudo systemctl start nginx` | Start nginx |
+| `sudo systemctl stop nginx` | Stop nginx |
+| `ps` | Show current-shell processes |
+| `ps aux` | Show all running processes |
+| `top` | Real-time process viewer |
+| `htop` | Interactive process viewer |
+| `kill pid` | Stop a process by PID |
+| `uname` | Show basic system info |
+| `uname -a` | Show detailed system info |
+| `whoami` | Show current username |
+| `hostname` | Show system hostname |
+| `sudo hostnamectl set-hostname <name>` | Change system hostname |
+| `gzip file_name` | Compress a file |
+| `gunzip file_name.gz` | Extract a gzip file |
+| `unzip file_name` | Extract a zip file |
+| `zip archive_name files` | Create a zip archive |
+| `zcat file_name.gz` | View gzip content without extracting |
+| `sudo adduser user_name` | Create a user |
+| `sudo groupadd group_name` | Create a group |
+| `id user_name` | Show user and group IDs |
+| `getent group group_name` | Show one group entry |
+| `sudo usermod -aG group_name user_name` | Add user to a group |
+| `groups user_name` | Show user groups |
+| `cat /etc/passwd` | Show user account entries |
+| `getent group` | Show all group entries |
+| `sudo deluser username` | Delete a user |
+| `sudo groupdel groupname` | Delete a group |
+
+## Day 3 Practice
+
+```bash
+curl https://example.com
+wget https://example.com/file.zip
+ss
+ss -t
+ss -u
+ss -l
+ss -n
+ifconfig
+ping www.google.com
+which nginx
+sudo service nginx status
+sudo systemctl status nginx
+ps
+ps aux
+uname
+uname -a
+whoami
+hostname
+gzip copy.txt
+gunzip copy.txt.gz
+zip files.zip file1.txt
+unzip files.zip
+sudo adduser devuser
+sudo groupadd developers
+id devuser
+getent group developers
+groups devuser
+cat /etc/passwd
+getent group
 ```
 
 ## Key Points to Remember
 
-- `ls` is for listing contents.
-- `mkdir` is for creating directories.
-- `cd` is for changing directories.
+- Day 1 focuses on navigation, files, folders, and basic terminal usage.
+- Day 2 focuses on copying, moving, deleting, searching, and editing text.
+- Day 3 focuses on packages, networking, processes, compression, and user management.
 - `cd ~` and `cd` both take you to the home directory.
-- `echo` can print text or write text into files.
-- `cp` copies files and directories.
-- `mv` moves or renames files and directories.
-- `rm -r` removes folders and their contents.
-- `grep` searches text inside files.
-- `sed` edits or transforms text.
-- `head` and `tail` help preview file content.
-- `touch` is for creating empty files or updating timestamps.
-- `clear` only cleans the terminal display.
+- `rm -r` removes folders and their contents, so use it carefully.
+- `grep` searches text inside files, while `sed` changes or transforms text.
+- `apt` is used to update, upgrade, and install software.
+- `curl` and `wget` are helpful for testing URLs and downloading files.
+- `ps`, `top`, and `htop` help monitor processes.
+- `gzip`, `gunzip`, `zip`, and `unzip` handle file compression.
+- `adduser`, `groupadd`, and `usermod` are used for user and group management.
 - `ll` may not work on every Linux system.
